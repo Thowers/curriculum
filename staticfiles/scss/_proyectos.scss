@@ -1,0 +1,128 @@
+@use "variables";
+
+.projects-section {
+    padding: 2rem 1.5rem;
+    background-color: variables.$background-color;
+}
+
+.projects-section .section-title-main {
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carousel-track-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+/* IMPORTANT: usar flex para que el track tenga altura por el contenido */
+.carousel-track {
+    display: flex;                 /* hace que los slides conserven altura */
+    transition: transform 350ms ease-in-out;
+    will-change: transform;
+}
+
+/* Cada slide ocupa el 100% del contenedor visible */
+.carousel-slide {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding: 0; /* ajustable */
+}
+
+.project-card {
+    background-color: variables.$card-background-color;
+    color: variables.$card-text-color;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 350px; /* fallback para evitar colapso */
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-title {
+    font-size: 1.4rem;
+    color: variables.$background-color;
+    font-weight: bold;
+}
+
+.project-description {
+    flex-grow: 1; /* Empuja los botones hacia abajo */
+    margin: 1rem 0;
+}
+
+.project-link,
+.github-link {
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 0.5rem;
+    width: fit-content; /* Ajusta el ancho al contenido */
+}
+
+.project-link {
+    background-color: variables.$primary-color;
+    color: variables.$light-text-color;
+}
+
+.github-link {
+    background-color: variables.$secondary-color;
+    color: variables.$light-text-color;
+}
+
+.github-link i {
+    margin-right: 0.5rem;
+}
+
+/* --- Botones del Carrusel --- */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(28, 3, 95, 0.7); /* Fondo semi-transparente */
+    border: 2px solid variables.$primary-color;
+    color: variables.$primary-color;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background: variables.$primary-color;
+    color: variables.$light-text-color;
+}
+
+.carousel-button--left {
+    left: -50px;
+}
+
+.carousel-button--right {
+    right: -50px;
+}
+
+.carousel-button.is-hidden {
+    display: none;
+}
