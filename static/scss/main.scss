@@ -1,0 +1,154 @@
+@use "variables";
+@use "principal";
+@use "proyectos";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: variables.$font-family-primary;
+    background-color: variables.$background-color;
+    color: variables.$text-color;
+    line-height: 1.6;
+}
+
+a {
+    color: variables.$primary-color;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+@media (min-width: 768px) {
+    .resume-container {
+        flex-direction: row; /* Columnas lado a lado */
+    }
+
+    .sidebar {
+        flex: 0 0 35%; /* Ocupa el 35% del ancho */
+        max-width: 400px;
+        text-align: left;
+        border-right: 2px solid variables.$border-color;
+    }
+
+    .sidebar-content {
+        position: sticky; /* Para que la barra lateral no se desplace con el contenido */
+        top: 2rem;
+    }
+
+    .main-content {
+        flex: 1; /* Ocupa el espacio restante */
+        padding: 2rem;
+    }
+}
+
+/* A partir de 1024px (Escritorios) */
+/* Cubre 1024px, 1280px, 1440px */
+@media (min-width: 1024px) {
+    .resume-container {
+        max-width: 1200px; /* Ancho máximo para evitar que se estire demasiado */
+        margin: 2rem auto;
+        border: 3px solid variables.$border-color;
+        border-radius: 15px;
+        overflow: hidden; /* Para que el borde redondeado afecte a los hijos */
+    }
+    
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .main-content {
+         padding: 3rem;
+    }
+}
+
+/* A partir de 1440px (Escritorios grandes) */
+@media (min-width: 1440px) {
+    .resume-container {
+        max-width: 1360px; /* Un poco más de ancho para pantallas grandes */
+    }
+
+    body {
+        font-size: 17px; /* Aumenta ligeramente el tamaño de la fuente base */
+    }
+}
+
+/* Media Query para ajustar los botones en móvil */
+@media (max-width: 900px) {
+    .carousel-button--left {
+        left: 10px;
+    }
+
+    .carousel-button--right {
+        right: 10px;
+    }
+}
+
+/* Móvil: mostrar logo + hamburguesa, ocultar nombre y nav */
+@media (max-width: 767px) {
+    .nav-menu { /* menú principal oculto (se mostrará via .active) */
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: variables.$background-color;
+        border-top: 2px solid variables.$primary-color;
+        z-index: 1000;
+        flex-direction: column;
+    }
+
+    .nav-menu.active { display: flex; }
+
+    .nav-menu ul {
+        flex-direction: column;
+    }
+
+    .header-name { display: none; } /* ocultar nombre en móvil */
+
+    .hamburger { display: block; } /* mostrar hamburguesa */
+}
+
+/* Escritorio: mostrar nav a la izquierda y ocultar hamburguesa */
+@media (min-width: 768px) {
+    .hamburger { display: none; }
+    .nav-menu {
+        display: block; /* visible en desktop */
+        position: static;
+        width: auto;
+    }
+    /* Diseño: fijar menú a la izquierda visualmente */
+    .main-header { justify-content: flex-start; }
+    .nav-menu { order: 0; margin-right: auto; } /* nav a la izquierda */
+    .header-right { order: 1; } /* logo + nombre a la derecha */
+}
+
+/* ==================== ESTILOS ESCRITORIO (≥768px) ==================== */
+@media (min-width: 768px) {
+    .hamburger {
+        display: none; /* ocultar ícono hamburguesa */
+    }
+    .nav-menu {
+        position: static;
+        display: flex !important; /* siempre visible */
+        background: none;
+        flex-direction: row;
+        border: none;
+    }
+    .nav-menu li {
+        border: none;
+    }
+    .nav-menu li a {
+        padding: 0 1rem;
+        line-height: 1;
+    }
+    .nav-menu li a:hover {
+        background: none;
+        color: variables.$primary-color;
+    }
+}

@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="main">
+        <header class="main-header">
+            {% include "includes/header.html" %}
+        </header>
+        <main  class="resume-container">{% block content %} {% endblock %}</main>
+        <section id="proyectos" class="projects-section">{% include "includes/section.html" %}</section>
+
+        <footer style="background-color:#1a1a1a; color:white; padding:20px 0; font-family:sans-serif;">
+            {% include "includes/footer.html" %}
+        </footer>
+    </div>
+    <script src="{% static 'main/scripts/proyectos.js' %}"></script>
+
+</body>
+
+</html>

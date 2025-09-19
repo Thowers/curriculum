@@ -1,0 +1,99 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} CV - Nicolas Parra Torres {% endblock %}
+
+{% block content %}
+<aside class="sidebar">
+    <div class="sidebar-content">
+        <img src="/static/main/imagenes/perfil.jpg" alt="Foto de perfil" class="profile-picture">
+        <h1 class="name">Nicolas Parra Torres</h1>
+        <p class="job-title">Ingeniero de software (8 Semestre)</p>
+
+        <div id="contacto" class="contact-info section">
+            <h2 class="section-title">Contacto</h2>
+            <ul>
+                <li><i class="fa-solid fa-phone"></i> +57 317 8894396</li>
+                <li><i class="fa-solid fa-envelope"></i> nicolasparratorres@gmail.com</li>
+                <li><i class="fa-solid fa-location-dot"></i> Bogotá, Colombia</li>
+                <li><i class="fa-brands fa-linkedin"></i> linkedin.com/in/nicolas-p-7b1ba5127</li>
+                <li><i class="fa-brands fa-github"></i> github.com/Thowers</li>
+            </ul>
+        </div>
+
+        <div class="skills section">
+            <h2 class="section-title">Competencias tecnicas</h2>
+            <ul>
+                <li>Python</li>
+                <li>Desarrollo de bots modulares</li>
+                <li>Desarrollo de APIs</li>
+                <li>Bases de datos</li>
+                <li>Arquitectura de software</li>
+            </ul>
+            <h2 class="section-title">Habilidades blandas</h2>
+            <ul>
+                <li>Liderazgo</li>
+                <li>Comunicacion asertiva</li>
+                <li>Resolucion de conflictos</li>
+                <li>Trabajo en equipo</li>
+                <li>Adaptabilidad</li>
+            </ul>
+        </div>
+
+        <div class="languages section">
+            <h2 class="section-title">Idiomas</h2>
+            <ul>
+                <li>Español (Nativo)</li>
+                <li>Inglés (Avanzado - B2)</li>
+            </ul>
+        </div>
+    </div>
+</aside>
+
+<section class="main-content">
+    <div id="perfil" class="profile-section">
+        <h2 class="section-title-main">Perfil Profesional</h2>
+        <p>Ingeniero de Software en formación (octavo semestre), con una sólida base en programación, desarrollo
+            de software, infraestructura en TI y manejo de bases de datos. He desarrollado proyectos académicos
+            en los que he liderado pequeños equipos, demostrando habilidades de organización y colaboración.
+            Tecnólogo en contabilidad y finanzas, con experiencia en el área contable. Con competencias como
+            planeación y organización, seguimiento de instrucciones, atención al detalle y adaptabilidad.</p>
+    </div>
+
+    <div id="experiencia" class="experience-section">
+        <h2 class="section-title-main">Experiencia Laboral</h2>
+        <article class="card">
+            <h3 class="card-title">Asistente administrativo</h3>
+            <p class="card-subtitle">Covinet LTDA</p>
+            <p class="card-subtitle">Abr 2020 - May 2022</p>
+        </article>
+        <article class="card">
+            <h3 class="card-title">Auxiliar Contable</h3>
+            <p class="card-subtitle">Alimentos Ula´s Gourmet SAS</p>
+            <p class="card-subtitle">May 2019 - Feb 2020</p>
+        </article>
+        <article class="card">
+            <h3 class="card-title">Auxiliar Contable</h3>
+            <p class="card-subtitle">Pearson Educacion de Colombia SAS</p>
+            <p class="card-subtitle">Oct 2018 - Abr 2019</p>
+        </article>
+    </div>
+    <div id="educacion" class="education-section">
+        <h2 class="section-title-main">Educación</h2>
+        <article class="card">
+            <h3 class="card-title">Ingeniería de Software</h3>
+            <p class="card-subtitle">Universidad Manuela Beltran</p>
+            <p class="card-subtitle">En curso (Octavo Semestre)</p>
+        </article>
+        <article class="card">
+            <h3 class="card-title">Tecnólogo en Contabilidad y Finanzas</h3>
+            <p class="card-subtitle">SENA</p>
+            <p class="card-subtitle">2019</p>
+        </article>
+        <article class="card">
+            <h3 class="card-title">Bachiller Academico</h3>
+            <p class="card-subtitle">Instituto Henao y Arrubla</p>
+            <p class="card-subtitle">2016</p>
+        </article>
+    </div>
+</section>
+{% endblock %}

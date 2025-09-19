@@ -1,0 +1,208 @@
+@use "variables";
+
+.resume-container {
+    display: flex;
+    flex-direction: column; /* Apilado en móvil */
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* --- BARRA LATERAL --- */
+.sidebar {
+    background-color: variables.$background-color;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid variables.$primary-color;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.name {
+    font-size: 2rem;
+    color: variables.$primary-color;
+    margin-bottom: 0.25rem;
+}
+
+.job-title {
+    font-size: 1.2rem;
+    color: variables.$light-text-color;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    color: variables.$primary-color;
+    border-bottom: 2px solid variables.$secondary-color;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.contact-info ul li,
+.skills ul li,
+.languages ul li {
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.contact-info i {
+    color: variables.$primary-color;
+    margin-right: 0.8rem;
+    width: 20px; /* Alinea los iconos */
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.main-content {
+    padding: 2rem 1.5rem;
+}
+
+.section-title-main {
+    font-size: 1.8rem;
+    color: variables.$primary-color;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.profile-section p {
+    margin-bottom: 2rem;
+}
+
+.card {
+    background-color: variables.$card-background-color;
+    color: variables.$card-text-color; /* Texto oscuro para contraste */
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid variables.$secondary-color;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    color: variables.$background-color;
+    font-weight: bold;
+}
+
+.card-subtitle {
+    font-size: 1rem;
+    font-weight: bold;
+    color: variables.$secondary-color;
+    margin-bottom: 1rem;
+}
+
+.card ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.main-header {
+    background-color: variables.$background-color;
+    color: variables.$light-text-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 2px solid variables.$primary-color;
+    position: relative;
+    gap: 1rem;
+}
+
+.nav-menu {
+    display: none; /* móvil: oculto por defecto */
+}
+
+.nav-menu ul {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li { list-style: none; }
+.nav-menu a {
+    color: variables.$light-text-color;
+    text-decoration: none;
+    padding: 0.4rem 0.6rem;
+    display: inline-block;
+}
+.nav-menu a:hover {
+    color: variables.$primary-color;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: auto; /* fuerza a la derecha */
+}
+
+.header-logo {
+    height: 44px;
+    width: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    display: block;
+}
+
+.header-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: variables.$primary-color;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    color: variables.$primary-color;
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: none; /* visible solo en móvil, se activa con media query */
+}
+
+
+.main-footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.main-footer .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-footer .footer-links ul li {
+    margin: 0 10px;
+}
+
+.main-footer .footer-links ul li a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.main-footer .footer-links ul li a:hover {
+    color: #fff;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: #777;
+}
