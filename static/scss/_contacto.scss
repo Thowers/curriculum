@@ -1,0 +1,97 @@
+@use "variables";
+@use "sass:color";
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem 1.5rem;
+  background-color: variables.$secondary-color;
+  border-radius: 12px;
+  margin: 2rem 2rem;      
+  width: 100%;          
+  max-width: none;   
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    color: variables.$primary-color;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: variables.$light-text-color;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 1.8px solid variables.$border-color;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      background-color: #fff;
+      color: variables.$card-text-color;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: variables.$primary-color;
+      box-shadow: 0 0 8px rgba(variables.$primary-color, 0.25);
+      outline: none;
+    }
+  }
+
+  .btn-enviar {
+    align-self: center;
+    background-color: variables.$primary-color;
+    color: variables.$secondary-color;
+    font-weight: bold;
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: color.scale(variables.$primary-color, $lightness: -10%);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 2rem 1rem;
+  }
+
+  .contact-form {
+    .btn-enviar {
+      width: 100%;
+    }
+  }
+}

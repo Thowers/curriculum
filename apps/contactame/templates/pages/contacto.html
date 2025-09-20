@@ -1,0 +1,64 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Contáctame{% endblock %}
+
+{% block content %}
+<section id="form-contacto" class="contact-section">
+    <h2 class="section-title-main">Contáctame</h2>
+
+    <form method="POST" class="contact-form">
+        {% csrf_token %}
+
+        <!-- Nombre -->
+        <div class="form-group">
+            <label for="{{ form.nombre.id_for_label }}">Nombre *</label>
+            {{ form.nombre }}
+            {% if form.nombre.errors %}
+                <div class="error">{{ form.nombre.errors }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Correo electrónico *</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+                <div class="error">{{ form.email.errors }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Teléfono -->
+        <div class="form-group">
+            <label for="{{ form.telefono.id_for_label }}">Teléfono</label>
+            {{ form.telefono }}
+        </div>
+
+        <!-- Asunto -->
+        <div class="form-group">
+            <label for="{{ form.asunto.id_for_label }}">Asunto *</label>
+            {{ form.asunto }}
+            {% if form.asunto.errors %}
+                <div class="error">{{ form.asunto.errors }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Mensaje -->
+        <div class="form-group">
+            <label for="{{ form.mensaje.id_for_label }}">Mensaje *</label>
+            {{ form.mensaje }}
+            {% if form.mensaje.errors %}
+                <div class="error">{{ form.mensaje.errors }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Campos ocultos -->
+        {{ form.estado }}
+        {{ form.origen }}
+
+        <button type="submit" class="btn-enviar">Enviar mensaje</button>
+    </form>
+    <script src="{% static 'main/scripts/contacto.js' %}"></script>
+</section>
+
+{% endblock %}
