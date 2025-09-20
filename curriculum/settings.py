@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-d3!%8wbr^ii)5z_b3ddliyd=^8#&)nt2&ced2vqy&1!l$c(%22
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".railway.app", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["cv-nicolas-torres.up.railway.app", ".railway.app", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -130,3 +130,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.up.railway.app",
+]
