@@ -6,7 +6,7 @@ def contacto(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("inicio")  # Cambia "inicio" por la ruta que quieras después de enviar
+            return redirect("inicio") 
     else:
         form = ContactForm(initial={"estado": "PEN", "origen": "web"})
 
