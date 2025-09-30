@@ -7,4 +7,5 @@ urlpatterns = [
     path('', inicio, name="inicio"),
     path('contacto/', include('apps.contactame.urls')),
     path('preguntas/', include('apps.preguntas.urls')),
+    path('musica/', include('apps.musica.urls')),
 ]

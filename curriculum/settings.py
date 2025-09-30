@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.contactame',
-    'apps.preguntas'
+    'apps.preguntas',
+    'apps.musica',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,38 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Música{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="mb-4 text-center">Música Recomendada</h2>
+    <div class="row g-4">
+        {% for album in albums %}
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="{{ album.imagen }}" class="card-img-top" alt="{{ album.titulo }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ album.titulo }}</h5>
+                    <h6 class="card-subtitle text-muted">{{ album.artista }}</h6>
+                    <p class="card-text mt-2">{{ album.descripcion }}</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="{{ album.spotify_link }}" target="_blank" class="btn btn-success">
+                        <i class="fab fa-spotify"></i> Escuchar en Spotify
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center">No hay música disponible aún.</p>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+.card-img-top {
+height: 250px;
+object-fit: cover;
+}
+</style>
+{% endblock %}
