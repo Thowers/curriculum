@@ -6,4 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio, name="inicio"),
     path('contacto/', include('apps.contactame.urls')),
+    path('preguntas/', include('apps.preguntas.urls')),
 ]
